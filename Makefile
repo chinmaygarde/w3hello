@@ -16,8 +16,10 @@ deploy: test
 	@npx hardhat ignition deploy ignition/modules/Counter.ts
 	@npx hardhat ignition deploy ignition/modules/HelloWorld.ts
 	@npx hardhat ignition deploy ignition/modules/Voting.ts
+	@npx hardhat ignition deploy ignition/modules/TaxableEarning.ts
 
 deploy_hoodi: deploy
 	@npx hardhat ignition deploy ignition/modules/Counter.ts --network hoodi
 	@npx hardhat ignition deploy ignition/modules/HelloWorld.ts --network hoodi
 	@npx hardhat ignition deploy ignition/modules/Voting.ts --network hoodi
+	@npx hardhat ignition deploy ignition/modules/TaxableEarning.ts --network hoodi
