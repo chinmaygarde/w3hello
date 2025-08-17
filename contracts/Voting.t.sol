@@ -6,6 +6,7 @@ import {Test} from "forge-std/Test.sol";
 
 contract VotingTest is Test {
   Voting voting;
+  address alice = address(0xA11CE);
 
   function setUp() public {
     voting = new Voting();
@@ -22,6 +23,7 @@ contract VotingTest is Test {
     require(voting.IsProposalWinning(4) == false);
     voting.CastVote(1, true);
     require(voting.IsProposalWinning(1) == true);
+    vm.prank(alice);
     voting.CastVote(1, false);
     require(voting.IsProposalWinning(1) == false);
   }
@@ -33,8 +35,17 @@ contract VotingTest is Test {
     voting.CastVote(1, true);
     require(voting.GetVotesFor(1) == 1);
     require(voting.GetVotesAgainst(1) == 0);
+    vm.prank(alice);
     voting.CastVote(1, false);
     require(voting.GetVotesFor(1) == 1);
     require(voting.GetVotesAgainst(1) == 1);
+  }
+
+  function test_DoubleVotingIsImpossible() public {
+    voting.CreateProposal(1, "A");
+    voting.CastVote(1, true);
+    // Try to double vote.
+    vm.expectRevert();
+    voting.CastVote(1, true);
   }
 }

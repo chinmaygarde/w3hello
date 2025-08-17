@@ -9,6 +9,8 @@ contract Voting {
     bool registered;
   }
   mapping(uint256 /* proposal_number */ => Proposal) public proposals;
+  mapping(uint256 /* proposal_number */ =>
+    mapping(address /* voter */ => bool /* voted */)) voters;
 
   function CreateProposal(uint256 new_proposal_number, string memory name) public {
     require(!proposals[new_proposal_number].registered, "That proposal has already been made.");
@@ -18,6 +20,8 @@ contract Voting {
 
   function CastVote(uint256 proposal_number, bool for_or_against) public {
     require(proposals[proposal_number].registered, "The proposal must exist.");
+    require(!voters[proposal_number][msg.sender], "The sender must not have already voted on this proposal.");
+    voters[proposal_number][msg.sender] = true;
     if (for_or_against) {
       proposals[proposal_number].votes_for++;
     } else {
