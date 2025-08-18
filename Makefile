@@ -13,15 +13,7 @@ build:
 # https://hardhat.org/docs/getting-started#deploying-contracts
 deploy: test
 	@echo "Performing a test deployment."
-	@npx hardhat ignition deploy ignition/modules/Counter.ts
-	@npx hardhat ignition deploy ignition/modules/HelloWorld.ts
-	@npx hardhat ignition deploy ignition/modules/Voting.ts
-	@npx hardhat ignition deploy ignition/modules/TaxableEarning.ts
-	@npx hardhat ignition deploy ignition/modules/ShitCoin.ts
+	@npx hardhat ignition deploy ignition/modules/Uber.ts
 
 deploy_hoodi: deploy
-	@npx hardhat ignition deploy ignition/modules/Counter.ts --network hoodi
-	@npx hardhat ignition deploy ignition/modules/HelloWorld.ts --network hoodi
-	@npx hardhat ignition deploy ignition/modules/Voting.ts --network hoodi
-	@npx hardhat ignition deploy ignition/modules/TaxableEarning.ts --network hoodi
-	@npx hardhat ignition deploy ignition/modules/ShitCoin.ts --network hoodi
+	@npx hardhat ignition deploy ignition/modules/Uber.ts --verify --network hoodi
