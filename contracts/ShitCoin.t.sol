@@ -11,10 +11,10 @@ contract ShitCoinTest is Test {
   function setUp() public {
     vm.prank(alice);
     coin = new ShitCoin();
-    assertEq(coin.balanceOf(alice), 1000);
+    assertEq(coin.balanceOf(alice), 1000 ether);
   }
 
   function test_TotalSupply() public {
-    assertEq(coin.totalSupply(), 1000);
+    assertEq(coin.totalSupply(), 1000 ether);
   }
 }
