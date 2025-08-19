@@ -10,6 +10,7 @@ export default buildModule("UberModule", (m) => {
   const voting = m.contract("Voting");
   const shit_coin1 = m.contract("ShitCoin1");
   const shit_coin2 = m.contract("ShitCoin2");
+  const totem_forge = m.contract("TotemForge");
 
   return {
     counter,
@@ -19,5 +20,6 @@ export default buildModule("UberModule", (m) => {
     voting,
     shit_coin1,
     shit_coin2,
+    totem_forge,
   };
 });
