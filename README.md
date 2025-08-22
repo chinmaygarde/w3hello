@@ -1,5 +1,7 @@
 # W3 Hello
 
+[![Build & Test](https://github.com/chinmaygarde/w3hello/actions/workflows/ci.yml/badge.svg)](https://github.com/chinmaygarde/w3hello/actions/workflows/ci.yml)
+
 A sandbox where I follow along smart contract development tutorials. Nothing to see here.
 
 ## Build & Test
