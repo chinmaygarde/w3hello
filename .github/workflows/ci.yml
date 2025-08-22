@@ -8,14 +8,14 @@ jobs:
     name: Build & Test
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        name: Checkout code.
       - uses: actions/setup-node@v4
         name: Setup Node
         with:
-          node-version: ''
+          node-version-file: '.nvmrc'
       - uses: extractions/setup-just@v3
         name: Setup Just
-      - uses: actions/checkout@v4
-        name: Checkout code.
       - name: Sync Dependencies
         run: just sync
       - name: Build And Test
