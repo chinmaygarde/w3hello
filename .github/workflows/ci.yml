@@ -5,6 +5,7 @@ on:
 
 jobs:
   build_and_test:
+    name: Build & Test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-node@v4
@@ -13,9 +14,9 @@ jobs:
           node-version: ''
       - uses: extractions/setup-just@v3
         name: Setup Just
-      - name: Sync Dependencies
-        run: just sync
       - uses: actions/checkout@v4
         name: Checkout code.
+      - name: Sync Dependencies
+        run: just sync
       - name: Build And Test
         run: just test
