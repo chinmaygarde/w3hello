@@ -11,3 +11,9 @@ jobs:
         name: Setup Node
         with:
           node-version: ''
+      - uses: extractions/setup-just@v3
+        name: Setup Just
+      - name: Sync Dependencies
+        run: just sync
+      - name: Build And Test
+        run: just test
