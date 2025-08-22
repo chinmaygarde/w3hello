@@ -1,0 +1,24 @@
+name: Test
+
+on:
+  push
+
+jobs:
+  build_and_test:
+    name: Build & Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        name: Checkout code
+      - uses: actions/setup-node@v4
+        name: Setup Node
+        with:
+          node-version-file: '.nvmrc'
+      - uses: extractions/setup-just@v3
+        name: Setup Just
+      - name: Sync Dependencies
+        run: just sync
+      - name: Build And Test
+        run: just test
+      - name: Test Deplotment
+        run: just deploy
