@@ -15,5 +15,7 @@ jobs:
         name: Setup Just
       - name: Sync Dependencies
         run: just sync
+      - uses: actions/checkout@v4
+        name: Checkout code.
       - name: Build And Test
         run: just test
