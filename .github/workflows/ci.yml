@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        name: Checkout code.
+        name: Checkout code
       - uses: actions/setup-node@v4
         name: Setup Node
         with:
@@ -20,3 +20,5 @@ jobs:
         run: just sync
       - name: Build And Test
         run: just test
+      - name: Test Deplotment
+        run: just deploy
