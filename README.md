@@ -6,7 +6,7 @@ A sandbox where I follow along smart contract development tutorials. Nothing to 
 
 ## Build & Test
 
-While all tasks can be run via `npx hardhat`, the major tasks are specified in a `Makefile` too for ease of use.
+While all tasks can be run via `npx hardhat`, the major tasks are specified in a `justfile` too for ease of use.
 
 ### API Keys & Endpoints
 
@@ -20,7 +20,6 @@ All non-deployment and verification tasks should require no API keys or custom e
 
 ### Tasks
 
-* `make test`: Build contracts and run Solidity and Typescript tests.
-* `make deploy`: Deploy contracts to the local testnet.
-* `make depoly_hoodi`: Deploy contracts to the Hoodi testnet. Does an implicit deploy to the local testnet to verify deployment.
-* `npx hardhat verify --network hoodi <deployed_contract_address>`
+* `just test`: Build contracts and run Solidity and Typescript tests.
+* `just deploy`: Deploy contracts to the local testnet.
+* `just depoly_hoodi`: Deploy contracts to the Hoodi testnet. Does an implicit deploy to the local testnet to verify deployment.
