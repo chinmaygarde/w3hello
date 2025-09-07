@@ -20,3 +20,5 @@
 /coverage
 
 .DS_Store
+
+*.sublime-workspace

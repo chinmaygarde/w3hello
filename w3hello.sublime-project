@@ -1,0 +1,13 @@
+{
+	"folders":
+	[
+		{
+			"name": "W3 Hello",
+			"path": "."
+		},
+		{
+			"name": "OpenZeppelin",
+			"path": "./node_modules/@openzeppelin/contracts"
+		}
+	]
+}

@@ -11,6 +11,7 @@ export default buildModule("UberModule", (m) => {
   const shit_coin1 = m.contract("ShitCoin1");
   const shit_coin2 = m.contract("ShitCoin2");
   const totem_forge = m.contract("TotemForge");
+  const weth = m.contract("WrappedETH");
 
   return {
     counter,
@@ -21,5 +22,6 @@ export default buildModule("UberModule", (m) => {
     shit_coin1,
     shit_coin2,
     totem_forge,
+    weth,
   };
 });
