@@ -4,6 +4,12 @@
 
 A sandbox where I follow along smart contract development tutorials. Nothing to see here.
 
+## Prerequisites
+
+* Just: A task runner.
+* Node: For Hardhat.
+* `just sync` to install dependencies.
+
 ## Build & Test
 
 While all tasks can be run via `npx hardhat`, the major tasks are specified in a `justfile` too for ease of use.
