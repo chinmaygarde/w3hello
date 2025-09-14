@@ -21,4 +21,8 @@ deploy: test
 
 # Deploy to the Hoodi network.
 deploy_hoodi: deploy
-	@npx hardhat ignition deploy {{deployment_recipe}} --verify --network hoodi
+	@npx hardhat ignition deploy {{deployment_recipe}} --network hoodi --verify
+
+# Deploy to an Anvil network.
+deploy_anvil: deploy
+	@npx hardhat ignition deploy {{deployment_recipe}} --network anvil

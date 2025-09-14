@@ -42,8 +42,13 @@ const config: HardhatUserConfig = {
       url: configVariable("HOODI_RPC_URL"),
       accounts: [configVariable("HOODI_PRIVATE_KEY")],
     },
-    // Do NOT add a mainnet configuration. None of this garbage needs to be on
-    // the mainnet ever!
+    anvil: {
+      type: "http",
+      chainType: "l1",
+      url: configVariable("ANVIL_RPC_URL"),
+      accounts: [configVariable("ANVIL_PRIVATE_KEY")],
+    },
+    // Do NOT add a mainnet configuration.
   },
   verify: {
     etherscan: {
