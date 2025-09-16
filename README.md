@@ -4,6 +4,10 @@
 
 A sandbox where I follow along smart contract development tutorials. Nothing to see here.
 
+## Contributor Guide
+
+See [Repository Guidelines](AGENTS.md) for project structure, workflow commands, and review expectations.
+
 ## Prerequisites
 
 * Just: A task runner.
